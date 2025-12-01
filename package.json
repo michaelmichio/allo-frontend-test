@@ -9,11 +9,16 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "lint": "eslint . --fix"
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "check": "npm run lint && npm run type-check && npm run build-only && npm run test",
+    "ci": "npm run check"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
     "core-js": "^3.37.1",
+    "pinia": "^3.0.4",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
     "vuetify": "^3.6.14"
@@ -31,6 +36,7 @@
     "sass": "1.77.8",
     "sass-embedded": "^1.77.8",
     "typescript": "~5.6.3",
+    "vitest": "^2.1.4",
     "unplugin-fonts": "^1.1.1",
     "unplugin-vue-components": "^0.27.2",
     "unplugin-vue-router": "^0.10.0",
